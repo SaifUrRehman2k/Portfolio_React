@@ -10,6 +10,9 @@ import Hero from './components/sections/Hero'
 import { DockDemo } from './components/ui/Dock-Demo'
 import About from './components/sections/About'
 import StackedList from './components/layout/StackedList'
+import IconBadge from './components/ui/Badge'
+import Skills from './components/sections/Skills'
+import { CardImageWithList } from './components/layout/Card'
 
 function App() {
 
@@ -20,6 +23,9 @@ function App() {
           <Hero />
           <About/>
           <StackedList/>
+          <StackedList/>
+          <Skills/>
+          <CardImageWithList/>
           <DockDemo/>
         </Container>
       </div>
