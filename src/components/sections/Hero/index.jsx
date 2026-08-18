@@ -16,7 +16,7 @@ const Hero = () => {
                     </span>
 
                     {/* Heading */}
-                    <h1 className='text-gray-200'>
+                    <h1>
                         Building modern, scalable & <span className="text-blue-500">interactive</span> web applications.
                     </h1>
 

@@ -59,13 +59,13 @@ export default function StackedList() {
     return (
         <>
             <section className="my-32">
-                <h3 className='text-gray-200'>Work Experience</h3>
+                <h3 >Work Experience</h3>
 
                 <ListContainer>
 
                     {people.map((person) => (
 
-                        <ListItem data={person} />
+                        <ListItem data={person} key={person.name} />
                     ))}
                 </ListContainer>
                 {/* </ul> */}

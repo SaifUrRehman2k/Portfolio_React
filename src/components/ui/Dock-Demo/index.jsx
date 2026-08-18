@@ -10,6 +10,7 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Dock, DockIcon } from "../dock"; // Ensure path matches your project structure
+import { AnimatedThemeTogglerDemo } from "../ThemeToggler";
 
 const Icons = {
     calendar: (props) => <CalendarIcon {...props} />,
@@ -136,8 +137,24 @@ export function DockDemo() {
                             </Tooltip>
                         </DockIcon>
                     ))}
+                    <Separator orientation="vertical" className="h-full" />
+
+                    <DockIcon>
+                        <Tooltip>
+                            <TooltipTrigger>
+
+                                <AnimatedThemeTogglerDemo />
+
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>Switch Themes</p>
+                            </TooltipContent>
+                        </Tooltip>
+
+                    </DockIcon>
+
                 </Dock>
             </TooltipProvider>
-        </div>
+        </div >
     );
 }
