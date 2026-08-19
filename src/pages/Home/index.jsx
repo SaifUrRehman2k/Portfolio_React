@@ -1,0 +1,23 @@
+import StackedList from '@/components/layout/StackedList'
+import About from '@/components/sections/About'
+import Contact from '@/components/sections/Contact'
+import Hero from '@/components/sections/Hero'
+import Projects from '@/components/sections/Projects'
+import Skills from '@/components/sections/Skills'
+import React from 'react'
+
+const Home = () => {
+    return (
+        <>
+            <Hero />
+            <About />
+            <StackedList />
+            <StackedList />
+            <Skills />
+            <Projects />
+            <Contact />
+        </>
+    )
+}
+
+export default Home

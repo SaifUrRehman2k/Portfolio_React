@@ -45,7 +45,6 @@ const Hero = () => {
                 <div className="flex-1 flex items-center justify-center">
                     <div className="border-4 border-black relative w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full p-1 bg-linear-to-tr from-blue-500 to-purple-500">
                         <img
-                            src="https://via.placeholder.com/300"
                             alt="Profile"
                             className="w-full h-full rounded-full object-cover border-4 border-black m-0"
                         />

@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Dock, DockIcon } from "../dock"; // Ensure path matches your project structure
 import { AnimatedThemeTogglerDemo } from "../ThemeToggler";
+import { Link, NavLink } from "react-router";
 
 const Icons = {
     calendar: (props) => <CalendarIcon {...props} />,
@@ -58,8 +59,8 @@ const Icons = {
 
 const DATA = {
     navbar: [
-        { href: "#", icon: HomeIcon, label: "Home" },
-        { href: "#", icon: PencilIcon, label: "Blog" },
+        { href: "/", icon: HomeIcon, label: "Home" },
+        { href: "/blog", icon: PencilIcon, label: "Blog" },
     ],
     contact: {
         social: {
@@ -89,24 +90,27 @@ const DATA = {
 
 export function DockDemo() {
     return (
-        <div className="fixed bottom-10 left-96 right-96 z-999">
+        <div className="fixed bottom-10 left-96 right-96 z-50">
             <TooltipProvider>
                 <Dock direction="middle">
                     {DATA.navbar.map((item) => (
                         <DockIcon key={item.label}>
                             <Tooltip>
-                                <TooltipTrigger asChild>
-                                    <a
-                                        // href={item.href}
-                                        aria-label={item.label}
-                                        className={cn(
-                                            buttonVariants({ variant: "ghost", size: "icon" }),
-                                            "size-12 rounded-full"
-                                        )}
-                                    >
-                                        <item.icon className="size-4" />
-                                    </a>
-                                </TooltipTrigger>
+                                <TooltipTrigger
+                                    render={
+                                        <NavLink
+                                            // href={item.href}
+                                            to={item.href}
+                                            aria-label={item.label}
+                                            className={cn(
+                                                buttonVariants({ variant: "ghost", size: "icon" }),
+                                                "size-12 rounded-full"
+                                            )}
+                                        >
+                                            <item.icon className="size-4" />
+                                        </NavLink>
+                                    }
+                                />
                                 <TooltipContent>
                                     <p>{item.label}</p>
                                 </TooltipContent>
@@ -117,20 +121,22 @@ export function DockDemo() {
                     {Object.entries(DATA.contact.social).map(([name, social]) => (
                         <DockIcon key={name}>
                             <Tooltip>
-                                <TooltipTrigger asChild>
-                                    <a
-                                        // href={social.url}
-                                        aria-label={social.name}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className={cn(
-                                            buttonVariants({ variant: "ghost", size: "icon" }),
-                                            "size-12 rounded-full"
-                                        )}
-                                    >
-                                        <social.icon className="size-4" />
-                                    </a>
-                                </TooltipTrigger>
+                                <TooltipTrigger
+                                    render={
+                                        <a
+                                            // href={social.url}
+                                            aria-label={social.name}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className={cn(
+                                                buttonVariants({ variant: "ghost", size: "icon" }),
+                                                "size-12 rounded-full"
+                                            )}
+                                        >
+                                            <social.icon className="size-4" />
+                                        </a>
+                                    }
+                                />
                                 <TooltipContent>
                                     <p>{name}</p>
                                 </TooltipContent>
