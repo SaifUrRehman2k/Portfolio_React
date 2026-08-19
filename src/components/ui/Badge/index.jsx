@@ -14,7 +14,15 @@ export default IconBadge
 
 export const Badge = ({ badgeName }) => {
     return (
-        <span className="flex items-center justify-around max-w-40 w-max gap-2 rounded-full bg-gray-500/10 px-4 py-2 text-gray-600 inset-ring inset-ring-gray-600/20">
+        <span className="flex items-center justify-around max-w-40 w-max rounded-full bg-gray-500/10 px-4 py-2 text-gray-600 inset-ring inset-ring-gray-600/20">
+            {badgeName}
+        </span>
+    )
+}
+
+export const BadgeSM = ({ badgeName }) => {
+    return (
+        <span className="flex items-center justify-around max-w-40 w-max rounded-full bg-gray-500/10 px-2 py-1 text-gray-600 inset-ring inset-ring-gray-600/20 text-sm">
             {badgeName}
         </span>
     )

@@ -1,4 +1,4 @@
-import IconBadge, { Badge } from "@/components/ui/Badge"
+import IconBadge, { Badge, BadgeSM } from "@/components/ui/Badge"
 import { Button } from "@/components/ui/button"
 import {
     Card,
@@ -11,7 +11,7 @@ import {
 
 export function CardImageWithList() {
     return (
-        <Card className="relative mx-auto w-full max-w-sm pt-0">
+        <Card className="relative grow max-w-sm pt-0">
             <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
             <img
                 src="https://avatar.vercel.sh/shadcn1"
@@ -20,16 +20,24 @@ export function CardImageWithList() {
             />
             <CardHeader>
                 <CardAction>
-                    <Badge badgeName={"Featured"}/>
+                    <Badge badgeName={"Live"}/>
                 </CardAction>
-                <CardTitle>Design systems meetup</CardTitle>
+                <CardTitle>Weather App</CardTitle>
                 <CardDescription>
                     A practical talk on component APIs, accessibility, and shipping
+                    faster. A practical talk on component APIs, accessibility, and shipping
                     faster.
                 </CardDescription>
             </CardHeader>
             <CardFooter>
-                <Button className="w-full">View Event</Button>
+                {/* <Button className="w-full">View Event</Button> */}
+                <BadgeSM badgeName={"React.js"}/>
+                <BadgeSM badgeName={"Tailwind"}/>
+                <BadgeSM badgeName={"Shadcn"}/>
+                <BadgeSM badgeName={"RestAPI"}/>
+                <BadgeSM badgeName={"ReactLeaflet"}/>
+                <BadgeSM badgeName={"React-Router"}/>
+                <BadgeSM badgeName={"Redux"}/>
             </CardFooter>
         </Card>
     )

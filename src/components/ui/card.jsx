@@ -96,7 +96,7 @@ function CardFooter({
     <div
       data-slot="card-footer"
       className={cn(
-        "flex items-center rounded-b-xl border-t bg-muted/50 p-(--card-spacing)",
+        "flex items-start gap-x-2 flex-wrap gap-y-4 rounded-b-xl border-t bg-muted/50 p-(--card-spacing)",
         className
       )}
       {...props} />
