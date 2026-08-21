@@ -12,7 +12,7 @@ const Projects = () => {
                 <h1>Check out my latest work.</h1>
                 <p className='text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptates quisquam tempora perferendis corrupti, voluptatum fuga voluptatibus eveniet ducimus nostrum velit molestiae officiis ab sint officia sit, quam tempore est.</p>
             </div>
-            <div className='flex flex-row flex-wrap w-full justify-around items-center gap-y-8'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 <CardImageWithList />
                 <CardImageWithList />
                 <CardImageWithList />

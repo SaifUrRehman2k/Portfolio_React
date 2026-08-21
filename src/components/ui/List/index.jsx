@@ -2,7 +2,7 @@ import React from 'react'
 
 const ListContainer = ({ children }) => {
     return (
-        <ul role="list" className="divide-y divide-gray-300 dark:divide-gray-700">
+        <ul role="list" className="divide-y divide-gray-300 p-0 dark:divide-gray-700">
             {children}
         </ul>
     )
