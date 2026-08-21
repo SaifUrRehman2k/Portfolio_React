@@ -99,6 +99,14 @@
   --typeset-flow: 2em;
 }
 
+@media (max-width: 400px) {
+  .typeset-docs {
+    --typeset-size: 12px;
+    --typeset-leading: 1.6;
+    --typeset-flow: 1.8em;
+  }
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -151,7 +159,9 @@
     cursor: pointer;
   }
 }
-  ::view-transition-old(root), ::view-transition-new(root) {
-    animation: none;
-    mix-blend-mode: normal;
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }

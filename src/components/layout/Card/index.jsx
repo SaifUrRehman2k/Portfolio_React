@@ -13,7 +13,7 @@ import { Clock } from "lucide-react"
 
 export function CardImageWithList() {
     return (
-        <Card className="relative grow max-w-sm pt-0">
+        <Card className="relative grow m-auto max-w-sm pt-0">
             <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
             <img
                 src="https://avatar.vercel.sh/shadcn1"
@@ -22,7 +22,7 @@ export function CardImageWithList() {
             />
             <CardHeader>
                 <CardAction>
-                    <Badge badgeName={"Live"}/>
+                    <Badge badgeName={"Live"} />
                 </CardAction>
                 <CardTitle>Weather App</CardTitle>
                 <CardDescription>
@@ -33,21 +33,21 @@ export function CardImageWithList() {
             </CardHeader>
             <CardFooter>
                 {/* <Button className="w-full">View Event</Button> */}
-                <BadgeSM badgeName={"React.js"}/>
-                <BadgeSM badgeName={"Tailwind"}/>
-                <BadgeSM badgeName={"Shadcn"}/>
-                <BadgeSM badgeName={"RestAPI"}/>
-                <BadgeSM badgeName={"ReactLeaflet"}/>
-                <BadgeSM badgeName={"React-Router"}/>
-                <BadgeSM badgeName={"Redux"}/>
+                <BadgeSM badgeName={"React.js"} />
+                <BadgeSM badgeName={"Tailwind"} />
+                <BadgeSM badgeName={"Shadcn"} />
+                <BadgeSM badgeName={"RestAPI"} />
+                <BadgeSM badgeName={"ReactLeaflet"} />
+                <BadgeSM badgeName={"React-Router"} />
+                <BadgeSM badgeName={"Redux"} />
             </CardFooter>
         </Card>
     )
 }
 
-export function CardImageWithButtton(params) {
-    return(
-                <Card className="relative grow max-w-sm pt-0">
+export function CardImageWithButtton(params, classForParent) {
+    return (
+        <Card className={`relative grow pt-0${classForParent}`}>
             <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
             <img
                 src="https://avatar.vercel.sh/shadcn1"
@@ -58,8 +58,8 @@ export function CardImageWithButtton(params) {
                 <CardAction className={"col-span-1 row-span-1"}>
                     <span className="flex flex-row gap-2 ">
                         March 12
-                        <Separator/>
-                        <Clock size={16}/> 10 AM
+                        <Separator />
+                        <Clock size={16} /> 10 AM
                     </span>
                 </CardAction>
                 <CardTitle>Blog Title</CardTitle>
