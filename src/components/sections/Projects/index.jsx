@@ -1,4 +1,4 @@
-import { CardWithList } from '@/components/layout/Card'
+import { CardImageWithList } from '@/components/layout/Card'
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
 import React from 'react'
 
@@ -9,14 +9,14 @@ const Projects = () => {
                 <InteractiveHoverButton>
                     My Projects
                 </InteractiveHoverButton>
-                <h1>Check out my latest work.</h1>
+                <h1 className='text-center'>Check out my latest work.</h1>
                 <p className='text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptates quisquam tempora perferendis corrupti, voluptatum fuga voluptatibus eveniet ducimus nostrum velit molestiae officiis ab sint officia sit, quam tempore est.</p>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-                <CardWithList />
-                <CardWithList />
-                <CardWithList />
-                <CardWithList />
+                <CardImageWithList />
+                <CardImageWithList />
+                <CardImageWithList />
+                <CardImageWithList />
 
             </div>
         </div>
