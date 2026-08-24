@@ -8,14 +8,18 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { Separator } from "@base-ui/react"
+import { Separator } from "@/components/ui/separator"
 import { Clock } from "lucide-react"
 
-export function CardWithList() {
+export function CardImageWithList() {
     return (
         <Card className="relative grow m-auto max-w-sm pt-0">
             <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
-
+            <img
+                src="https://avatar.vercel.sh/shadcn1"
+                alt="Event cover"
+                className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
+            />
             <CardHeader>
                 <CardAction>
                     <Badge badgeName={"Live"} />
@@ -45,13 +49,13 @@ export function CardWithButton(params, classForParent) {
     return (
         <Card className={`relative grow pt-0${classForParent}`}>
 
-            <CardHeader className={"h-max gap-4"}>
+            <CardHeader className={"h-max gap-4 flex flex-col items-start"}>
                 <CardAction className={"col-span-1 row-span-1"}>
-                    <span className="flex flex-row gap-2 ">
+                    <small className="flex flex-row gap-2 text-muted-foreground items-center justify-center">
                         March 12
-                        <Separator />
-                        <Clock size={16} /> 10 AM
-                    </span>
+                        <Separator orientation="vertical" className={"bg-muted-foreground"} />
+                        <Clock size={12} /> 10 AM
+                    </small>
                 </CardAction>
                 <CardTitle>Helo my name is saif</CardTitle>
                 <CardDescription className={'col-span-2'}>
@@ -72,11 +76,12 @@ export function CardButtonHorizontal(params, classForParent) {
         <Card className="grid grid-cols-[1fr] items-start gap-4 mx-6">
             {/* <div className="absolute inset-0 z-30 aspect-video bg-black/35" /> */}
 
-            <CardHeader className={"h-max gap-8"}>
+            <CardHeader className={"h-max gap-8 md:grid flex flex-col"}>
                 <CardAction>
                     <span className="flex flex-row gap-2 text-muted-foreground">
                         March 12
-                        <Separator />
+                        <Separator orientation="vertical" className={"bg-muted-foreground"} />
+
                         <Clock size={16} /> 10 AM
                     </span>
                 </CardAction>
