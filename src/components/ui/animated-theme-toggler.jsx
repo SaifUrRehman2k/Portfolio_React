@@ -123,7 +123,17 @@ export const AnimatedThemeToggler = ({
 }) => {
   const shape = variant ?? "circle"
   const isControlled = theme !== undefined
-  const [internalIsDark, setInternalIsDark] = useState(false)
+  const [internalIsDark, setInternalIsDark] = useState(() => {
+    if (typeof window === "undefined") return false;
+
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      return savedTheme === "dark";
+    }
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  });
   const isDark = isControlled ? theme === "dark" : internalIsDark
   const buttonRef = useRef(null)
   const isTransitioningRef = useRef(false)
@@ -133,6 +143,16 @@ export const AnimatedThemeToggler = ({
     activeAnimRef.current?.cancel()
     activeAnimRef.current = null
   }, [])
+
+  useEffect(() => {
+    if (!isControlled) {
+      if (internalIsDark) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }
+  }, [internalIsDark, isControlled]);
 
   useEffect(() => {
     return () => {

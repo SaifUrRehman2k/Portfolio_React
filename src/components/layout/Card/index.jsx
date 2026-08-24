@@ -11,15 +11,11 @@ import {
 import { Separator } from "@base-ui/react"
 import { Clock } from "lucide-react"
 
-export function CardImageWithList() {
+export function CardWithList() {
     return (
         <Card className="relative grow m-auto max-w-sm pt-0">
             <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
-            <img
-                src="https://avatar.vercel.sh/shadcn1"
-                alt="Event cover"
-                className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
-            />
+
             <CardHeader>
                 <CardAction>
                     <Badge badgeName={"Live"} />
@@ -45,16 +41,11 @@ export function CardImageWithList() {
     )
 }
 
-export function CardImageWithButtton(params, classForParent) {
+export function CardWithButton(params, classForParent) {
     return (
         <Card className={`relative grow pt-0${classForParent}`}>
-            <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
-            <img
-                src="https://avatar.vercel.sh/shadcn1"
-                alt="Event cover"
-                className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
-            />
-            <CardHeader>
+
+            <CardHeader className={"h-max gap-4"}>
                 <CardAction className={"col-span-1 row-span-1"}>
                     <span className="flex flex-row gap-2 ">
                         March 12
@@ -62,11 +53,40 @@ export function CardImageWithButtton(params, classForParent) {
                         <Clock size={16} /> 10 AM
                     </span>
                 </CardAction>
-                <CardTitle>Blog Title</CardTitle>
+                <CardTitle>Helo my name is saif</CardTitle>
                 <CardDescription className={'col-span-2'}>
                     A practical talk on component APIs, accessibility, and shipping
                     faster. A practical talk on component APIs, accessibility, and shipping
                     faster.
+                </CardDescription>
+            </CardHeader>
+            <CardFooter>
+                <Button className="w-full">View Event</Button>
+            </CardFooter>
+        </Card>
+    )
+}
+
+export function CardButtonHorizontal(params, classForParent) {
+    return (
+        <Card className="grid grid-cols-[1fr] items-start gap-4 mx-6">
+            {/* <div className="absolute inset-0 z-30 aspect-video bg-black/35" /> */}
+
+            <CardHeader className={"h-max gap-8"}>
+                <CardAction>
+                    <span className="flex flex-row gap-2 text-muted-foreground">
+                        March 12
+                        <Separator />
+                        <Clock size={16} /> 10 AM
+                    </span>
+                </CardAction>
+                <CardTitle>Blog Title</CardTitle>
+                <CardDescription className={'row-start-2 col-span-2 col-start-1'}>
+                    A practical talk on component APIs, accessibility, and shipping
+                    faster. A practical talk on component APIs, accessibility, and shipping
+                    faster.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam numquam fugit harum nobis ipsam. Reiciendis eaque sint sunt magni atque adipisci, ipsa itaque dolore amet consequatur, unde provident est et!
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis excepturi culpa, unde debitis iure quis! Minus reiciendis eius fugit earum vel rerum fugiat voluptates doloremque libero labore! Necessitatibus, dignissimos placeat?
                 </CardDescription>
             </CardHeader>
             <CardFooter>
