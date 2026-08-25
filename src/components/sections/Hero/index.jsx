@@ -1,6 +1,5 @@
-import { ButtonOutline, ButtonPrimary, ButtonRender, ButtonSecondary } from '@/components/ui/Buttons'
-import { Button } from '@base-ui/react'
 import React from 'react'
+import { about } from '@/data'
 
 const Hero = () => {
     return (
@@ -12,13 +11,14 @@ const Hero = () => {
                 <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left space-y-5">
                     {/* Badge */}
                     <span className="px-3 py-1 text-xs font-medium bg-neutral-800 text-neutral-300 border border-neutral-400 rounded-full">
-                        Front-End Developer
+                        {about.role}
                     </span>
 
                     {/* Heading */}
-                    <h1>
+                    <h1>Hi, I'm <span className="text-blue-500 w-full text-nowrap">{` ${about.first_name} ${about.last_name}`}</span> </h1>
+                    <h2>
                         Building modern, scalable & <span className="text-blue-500">interactive</span> web applications.
-                    </h1>
+                    </h2>
 
                     {/* Description */}
                     <strong>
