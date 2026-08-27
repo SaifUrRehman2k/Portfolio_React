@@ -96,9 +96,29 @@ const projects = [
             "Email verification system.",
             "Add new users logic.",
         ],
+        technologies: ["ReactJS","TailwindCSS","Redux","Firebase","Git/Githib","Netlify", "VS Code"],
         date_started: new Date(2025, 10),
         date_ended: null,
-        expected_end: new Date(2026, 11)
+        expected_end: new Date(2026, 11),
+        status: "Live"
+    },
+        {
+        name: "Weather Application",
+        Features: [
+            "Provides Realtime weather details of current location.",
+            "Provides a Realtime Map view of weather conditons.",
+            "Provides diffrent units of measurments."
+        ],
+        remaining: [
+            "Integration with a paid API to display better results.",
+            "UI fixes and responsiveness required.",
+            "Forecast API is required for the Forecast page."
+        ],
+        technologies: ["ReactJS","CSS","TailwindCSS","Redux","Git/Githib","Netlify", "VS Code"],
+        date_started: new Date(2026, 2),
+        date_ended: null,
+        expected_end: new Date(2027, 12),
+        status: "Offline"
     }
 ]
 
