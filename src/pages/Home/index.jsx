@@ -5,7 +5,6 @@ import Education from '@/components/sections/Education'
 import Hero from '@/components/sections/Hero'
 import Projects from '@/components/sections/Projects'
 import Skills from '@/components/sections/Skills'
-import { Drawer } from '@/components/ui/drawer'
 import React from 'react'
 
 const Home = () => {
@@ -18,7 +17,6 @@ const Home = () => {
             <Skills />
             <Projects />
             <Contact />
-            <Drawer/>
         </>
     )
 }

@@ -86,7 +86,7 @@ const education = [
 const projects = [
     {
         name: "Student Management System (SMS)",
-        Features: [
+        features: [
             "Firebase Backend: Real-time Firestore database, Firebase Authentication, and secure rule enforcement.",
             "Role-Based Portals: Dedicated, secure dashboards for Admin, Teacher, and Student workflows.",
             "Global State: Synchronized app via Redux toolkit with editable features."
@@ -104,7 +104,7 @@ const projects = [
     },
         {
         name: "Weather Application",
-        Features: [
+        features: [
             "Provides Realtime weather details of current location.",
             "Provides a Realtime Map view of weather conditons.",
             "Provides diffrent units of measurments."

@@ -20,7 +20,7 @@ function App() {
             <Route path="/" element={<Home/>} />
             <Route path="/blog" element={<Blog/>} />
           </Routes>
-          <DockDemo />
+          {/* <DockDemo /> */}
         </Container>
 
       </div>

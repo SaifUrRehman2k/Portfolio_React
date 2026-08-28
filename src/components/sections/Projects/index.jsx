@@ -1,4 +1,5 @@
 import { CardImageWithList } from '@/components/layout/Card'
+import ProjectDrawer from '@/components/layout/ProjectDrawer'
 import { Badge, BadgeSM } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardAction, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
@@ -59,7 +60,7 @@ const Projects = () => {
                                     }
                                 </div>
                                 <div className='flex flex-nowrap w-full justify-between mt-8'>
-                                    <Button className="bg-blue-500 text-white hover:bg-blue-500/50 ">View Event</Button>
+                                    <ProjectDrawer projectData={project} />
                                     <a >
                                         <Button variant="outline" size="icon">
                                             <SiGithub />
