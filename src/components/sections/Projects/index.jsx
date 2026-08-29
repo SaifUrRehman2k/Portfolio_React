@@ -10,10 +10,6 @@ import { DiGithub } from 'react-icons/di'
 import { SiGithub } from 'react-icons/si'
 
 const Projects = () => {
-    const dateOptions = {
-        year: "numeric",
-        month: "short"
-    }
 
     return (
         <div className='w-full flex flex-col flex-wrap py-16'>
