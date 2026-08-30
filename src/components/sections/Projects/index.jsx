@@ -31,7 +31,7 @@ const Projects = () => {
                                 alt="Event cover"
                                 className=" z-0 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40 m-0"
                             />
-                            <span className="absolute top-2 right-2 z-999 text-xs max-w-40 w-max rounded-full bg-red-500/10 dark:bg-red-50/10 px-2 py-1 text-gray-600 dark:text-gray-100 inset-ring inset-ring-gray-600/20" >
+                            <span className="absolute top-2 right-2 z-20 text-xs max-w-40 w-max rounded-full bg-red-500/10 dark:bg-red-50/10 px-2 py-1 text-gray-600 dark:text-gray-100 inset-ring inset-ring-gray-600/20" >
                                 {/* {project.date_started.toLocaleString("en-US", options)} */}
                                 {
                                     project.status
