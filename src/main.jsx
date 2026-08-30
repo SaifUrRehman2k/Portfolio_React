@@ -5,7 +5,7 @@ import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from "react-router";
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/Portfolio_React">
     <App/>
   </BrowserRouter>,
 )
