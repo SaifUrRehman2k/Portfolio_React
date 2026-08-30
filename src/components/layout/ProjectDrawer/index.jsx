@@ -1,5 +1,3 @@
-import { Badge } from "@/components/ui/Badge"
-import { Button } from "@/components/ui/button"
 import {
     Drawer,
     DrawerClose,
@@ -10,78 +8,73 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer"
-import React from 'react'
-import { SiChainlink, SiGithub, SiLinktree } from "react-icons/si"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 
-const SNAP_POINTS = ["31rem", 1]
-
-const ProjectDrawer = ({ projectData }) => {
-    const dateOptions = {
-        year: "numeric",
-        month: "short"
+export default function ProjectDrawer(props) {
+    const data = props.projectData
+    const dateOpt = {
+        month: "short",
+        year: "numeric"
     }
     return (
-        <Drawer snapPoints={SNAP_POINTS} showSwipeHandle>
-            <DrawerTrigger render={<Button variant="outline" />}>Open</DrawerTrigger>
-            <DrawerContent className="max-w-2xl mx-auto h-max z-30">
-                <div className="max-h-[80vh] m-6">
-                    <div className="flex flex-wrap gap-2 justify-between">
-                        <img
-                            src="https://avatar.vercel.sh/shadcn1"
-                            alt="Event cover"
-                            className="aspect-video max-w-96 w-[50%] object-cover brightness-60 grayscale dark:brightness-40"
-                        />
-                        <DrawerHeader className="flex flex-col flex-wrap max-w-72 w-[50%] p-0">
-                            <DrawerTitle className="text-lg font-bold text-left">
-                                {projectData.name}
-                            </DrawerTitle>
-                            <DrawerDescription className={'text-left text-sm'}>
-                                Role-based management system for tracking courses, students, and instructor records.
-                            </DrawerDescription>
-                            <div className="mt-6 flex justify-start">
-                                <i className="text-gray-400 text-[12px]">{projectData?.date_started?.toLocaleDateString("en-US", dateOptions)} (Started) -</i>
-                                <i className="text-gray-400 text-[12px]">{projectData?.expected_end?.toLocaleDateString("en-US", dateOptions)} (expected-end)</i>
-                            </div>
-                        </DrawerHeader>
-                    </div>
-                    <div className="py-6 flex flex-row gap-2">
-                        <div className="flex-1">
-                            <strong>Features</strong>
-                            <ul className="list-disc m-auto px-6 py-2 flex flex-col gap-2">
-                                {
+        <Drawer>
+            <DrawerTrigger render={
+                <Button variant="outline">View Details</Button>
+            } />
 
-                                    projectData?.features?.map((e) => (
-                                        <li>{e}</li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
-                        <div className="flex-1">
-                            <strong>Remaining Work</strong>
-                            <ul className="list-disc px-6 py-2 flex flex-col gap-2">
+            <DrawerContent className="max-w-2xl mx-auto">
+                <div className="p-6 overflow-y-auto max-h-[80vh]">
+                    <DrawerHeader className="px-0">
+                        <DrawerTitle className="text-2xl text-left font-bold">
+                            {data.name}
+                        </DrawerTitle>
+                        <DrawerDescription className={"text-left text-[12px] italic"}>
+                            {data.date_started?.toLocaleDateString("en-US", dateOpt)}
+                            -
+                            {
+                                data.date_ended
+                                    ?
+                                    data.date_ended?.toLocaleDateString("en-US", dateOpt)
+                                    :
+                                    data.expected_end?.toLocaleDateString("en-US", dateOpt)
+                            }
+                            <span className="text-sm text-gray-400 font-light mx-2">
                                 {
+                                    data.date_ended
+                                        ?
+                                        '(Completed)'
+                                        :
+                                        '(On-going)'
 
-                                    projectData?.remaining?.map((e) => (
-                                        <li>{e}</li>
-                                    ))
                                 }
-                            </ul>
-                        </div>
+                            </span>
+                        </DrawerDescription>
+                    </DrawerHeader>
+
+                    {/* Tech Stack Badges */}
+
+
+                    {/* Core Features / Detailed Breakdown */}
+                    <div className="space-y-4 my-6 text-sm text-muted-foreground">
+                        <h4 className="text-base font-semibold text-foreground">Key Architecture & Features</h4>
+                        <ul className="list-disc pl-5 space-y-2">
+                            {
+                                data.features.map((e) => (
+                                    <li>
+                                        <strong>{e}</strong>
+                                    </li>
+                                ))
+                            }
+
+                        </ul>
                     </div>
-                    <DrawerFooter className="px-0 flex-row gap-4 w-full">
-                        <Button className="flex-1">
-                            Close
-                        </Button>
-                        {/* <Button variant="outline" asChild className="flex-1">
-                            <a href="https://github.com/your-repo" target="_blank" rel="noreferrer">
-                                <SiGithub />
-                            </a>
-                        </Button> */}
+
+                    <DrawerFooter className="px-0 flex-row gap-4">
+                        <DrawerClose render={<Button>Close</Button>} />
                     </DrawerFooter>
                 </div>
             </DrawerContent>
         </Drawer>
     )
 }
-
-export default ProjectDrawer
