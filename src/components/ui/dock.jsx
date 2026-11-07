@@ -3,6 +3,7 @@ import { cva } from "class-variance-authority";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 
 import { cn } from "@/lib/utils"
+import { useWindowSize } from "@reactuses/core";
 
 const DEFAULT_SIZE = 40
 const DEFAULT_MAGNIFICATION = 60
@@ -13,13 +14,14 @@ const dockVariants = cva(
   "supports-backdrop-blur:bg-gray-400/10 supports-backdrop-blur:dark:bg-black/10 mx-auto mt-8 flex h-[58px] w-max items-center justify-center gap-2 rounded-2xl border border-gray-300 dark:border-gray-500 p-2 backdrop-blur-lg"
 )
 
+const { width, height } = useWindowSize
 const Dock = React.forwardRef((
   {
     className,
     children,
-    iconSize = DEFAULT_SIZE,
+    iconSize = width > 350 ? DEFAULT_SIZE : 35,
     iconMagnification = DEFAULT_MAGNIFICATION,
-    disableMagnification = DEFAULT_DISABLEMAGNIFICATION,
+    disableMagnification = width > 350 ? DEFAULT_DISABLEMAGNIFICATION : true,
     iconDistance = DEFAULT_DISTANCE,
     direction = "middle",
     ...props
@@ -100,7 +102,7 @@ const DockIcon = ({
       style={{ width: scaleSize, height: scaleSize, padding }}
       className={cn(
         "flex aspect-square cursor-pointer items-center justify-center rounded-full",
-        disableMagnification && "hover:bg-muted-foreground transition-colors",
+        disableMagnification,
         className
       )}
       {...props}>

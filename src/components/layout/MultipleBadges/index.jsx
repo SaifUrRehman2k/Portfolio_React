@@ -13,7 +13,7 @@ const MultipleBadges = () => {
             <IconBadge icon={gitIcon} badgeName={"Git/Github"} /> */}
             {
                 skills.map((e)=>(
-                    <IconBadge icon={e.icon} badgeName={e.name} />
+                    <IconBadge icon={e.icon} badgeName={e.name} key={e.name} />
                 ))
             }
 

@@ -23,7 +23,7 @@ const Projects = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {
                     projects.map((project) => (
-                        <Card className="relative grow m-auto max-w-sm pt-0 h-max">
+                        <Card key={project.name} className="relative grow m-auto max-w-sm pt-0 h-full">
                             {/* <div className="absolute inset-0 z-30 aspect-video bg-black/35" /> */}
 
                             <img
@@ -51,7 +51,7 @@ const Projects = () => {
                                 <div className='flex flex-row flex-wrap w-full justify-start items-start gap-2'>
                                     {
                                         project.technologies.map((name) => (
-                                            <BadgeSM badgeName={name} />
+                                            <BadgeSM badgeName={name} key={name}/>
                                         ))
                                     }
                                 </div>
