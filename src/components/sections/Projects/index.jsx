@@ -12,7 +12,7 @@ import { SiGithub } from 'react-icons/si'
 const Projects = () => {
 
     return (
-        <div className='w-full flex flex-col flex-wrap py-16'>
+        <div className='w-full flex flex-col flex-wrap py-8 md:py-16'>
             <div className='flex flex-col flex-wrap items-center justify-around sm:w-[70%] w-full m-auto py-8'>
                 <InteractiveHoverButton>
                     My Projects

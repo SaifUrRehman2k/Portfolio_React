@@ -60,7 +60,7 @@ import React from "react"
 export default function StackedList(props) {
     return (
         <>
-            <section className="my-32">
+            <section className="my-8 sm:my-16 md:my-32">
                 <h3 >Education</h3>
 
                 <ListContainer>
