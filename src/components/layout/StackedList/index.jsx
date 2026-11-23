@@ -1,3 +1,4 @@
+import { ScrollAnimation, ScrollParallax } from "@/components/core/scroll-animation"
 import ListContainer, { ListItem } from "@/components/ui/List"
 import React from "react"
 // const people = [
@@ -66,8 +67,11 @@ export default function StackedList(props) {
                 <ListContainer>
 
                     {props.eduData.map((e) => (
+                        <ScrollAnimation>
 
-                        <ListItem data={e} key={e.institute} />
+                            <ListItem data={e} key={e.institute} />
+                        </ScrollAnimation>
+
                     ))}
                 </ListContainer>
                 {/* </ul> */}
