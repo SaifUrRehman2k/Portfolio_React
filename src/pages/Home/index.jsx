@@ -1,3 +1,4 @@
+import { ScrollAnimation, ScrollParallax } from '@/components/core/scroll-animation'
 import StackedList from '@/components/layout/StackedList'
 import About from '@/components/sections/About'
 import Contact from '@/components/sections/Contact'
@@ -8,15 +9,43 @@ import Skills from '@/components/sections/Skills'
 import React from 'react'
 
 const Home = () => {
+    const sections = [<Hero />, <About />, <Education />, <Skills />, <Projects />, <Contact />]
     return (
         <>
-            <Hero />
-            <About />
-            <Education />
-            {/* <StackedList /> */}
-            <Skills />
-            <Projects />
-            <Contact />
+            {/* <ScrollAnimation>
+                <ScrollParallax>
+                    <Hero />
+                </ScrollParallax>
+            </ScrollAnimation>
+
+            <ScrollAnimation>
+                <ScrollParallax>
+                    <About />
+                </ScrollParallax>
+            </ScrollAnimation>
+
+            <ScrollAnimation>
+                <ScrollParallax>
+
+                    <Education />
+                </ScrollParallax>
+            </ScrollAnimation>
+            <ScrollAnimation>
+                <ScrollParallax>
+
+                    <Skills />
+                </ScrollParallax>
+            </ScrollAnimation> */}
+            {
+                sections.map((e) => (
+                    <ScrollAnimation>
+                        {/* <ScrollParallax> */}
+                            {e}
+                        {/* </ScrollParallax> */}
+                    </ScrollAnimation>
+                ))
+            }
+
         </>
     )
 }

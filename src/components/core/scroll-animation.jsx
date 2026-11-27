@@ -21,22 +21,22 @@ const EASE_OUT_STRONG = [0.23, 1, 0.32, 1];
 const PRESETS = {
     'fade-up': {
         variants: {
-            hidden: { opacity: 0, y: 16 },
+            hidden: { opacity: 0, y: 128 },
             visible: { opacity: 1, y: 0 },
         },
-        duration: 0.5,
+        duration: 1,
     },
     'scale-in': {
         variants: {
-            hidden: { opacity: 0, scale: 0.96 },
+            hidden: { opacity: 0, scale: 0.80 },
             visible: { opacity: 1, scale: 1 },
         },
         duration: 0.5,
     },
     'clip-reveal': {
         variants: {
-            hidden: { clipPath: 'inset(100% 0% 0% 0%)' },
-            visible: { clipPath: 'inset(0% 0% 0% 0%)' },
+            hidden: { clipPath: 'inset(100%, 100%, 100%, 100%)' },
+            visible: { clipPath: 'inset(0%, 0%, 0%, 0%)' },
         },
         duration: 0.7,
     },
@@ -74,12 +74,12 @@ function variantsOf(
 export function ScrollAnimation({
     children,
     preset = 'fade-up',
-    delay = 0,
-    amount = 0.3,
+    delay = 0.2,
+    amount = 0.1,
     className,
     containerRef,
 }) {
-    const ref = useRef < HTMLDivElement > (null);
+    const ref = useRef(null);
     const prefersReducedMotion = usePrefersReducedMotion();
     const isInView = useInView(ref, { root: containerRef, once: true, amount });
     const revealState = revealStateOf(isInView);
@@ -109,7 +109,7 @@ function layerOffsetOf(
     offset
 ) {
     if (prefersReducedMotion) {
-        return 0;
+        return 20;
     }
     return offset;
 }
@@ -124,12 +124,12 @@ function layerOffsetOf(
 
 export function ScrollParallax({
     children,
-    strength = 40,
+    strength = 60,
     className,
     layerClassName,
     containerRef,
 }) {
-    const frameRef = useRef < HTMLDivElement > (null);
+    const frameRef = useRef(null);
     const prefersReducedMotion = usePrefersReducedMotion();
     const { scrollYProgress } = useScroll({
         target: frameRef,
@@ -149,7 +149,7 @@ export function ScrollParallax({
                     top: bleed,
                     bottom: bleed,
                 }}
-                className={cn('absolute inset-x-0', layerClassName)}
+                className={cn('inset-x-0', layerClassName)}
             >
                 {children}
             </motion.div>

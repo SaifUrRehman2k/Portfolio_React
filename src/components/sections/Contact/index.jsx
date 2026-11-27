@@ -9,7 +9,7 @@ const Contact = () => {
 
                     <strong>Let’s work together!</strong>
                     <h1 className='my-8'>For work inquires feel free to get in touch with me</h1>
-                    <a className="text-lg text-gray-500">contact@prebuiltui.com</a>
+                    <a className="text-lg text-gray-500">saifurrehman7482@gmail.com</a>
                 </div>
             </section>
         </>

@@ -67,11 +67,7 @@ export default function StackedList(props) {
                 <ListContainer>
 
                     {props.eduData.map((e) => (
-                        <ScrollAnimation>
-
-                            <ListItem data={e} key={e.institute} />
-                        </ScrollAnimation>
-
+                        <ListItem data={e} key={e.institute} />
                     ))}
                 </ListContainer>
                 {/* </ul> */}
